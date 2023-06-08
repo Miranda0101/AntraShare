@@ -10,6 +10,8 @@ import { NewsFeedModule } from './modules/news-feed/news-feed.module';
 import { ProfileModule } from './modules/profile/profile.module';
 import { SettingModule } from './modules/setting/setting.module';
 import { AdminModule } from './modules/admin/admin.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { AdminModule } from './modules/admin/admin.module';
     ProfileModule,
     SettingModule,
     AdminModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
