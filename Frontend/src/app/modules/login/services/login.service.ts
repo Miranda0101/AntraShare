@@ -19,12 +19,7 @@ export class LoginService {
       // If there is an error, redirect to register page
       catchError((err: HttpErrorResponse) => {
         if (err.status === 404) {
-          const token = localStorage.getItem('access_token')
-          if (token){
-            console.log("No access")
-          } else{
             this.router.navigate(['/register']);
-          }
 
         }
         return throwError(err);
