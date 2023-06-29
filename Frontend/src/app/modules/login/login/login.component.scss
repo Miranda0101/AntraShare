@@ -8,4 +8,18 @@ img {
 #loginform-container{
     margin-top: 2%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    // gap: 10px;
+    .loginform-fields{
+      width: 40px !important;
+    }
+}
+.loginform-button{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left:40%;
+  margin-right:40%;
+  width:auto;
 }
