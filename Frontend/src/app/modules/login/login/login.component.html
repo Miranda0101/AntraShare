@@ -1,15 +1,33 @@
-<div>   
-    <mat-form-field>
-        <mat-label>Username</mat-label>
-        <input matInput placeholder="Username">
-    </mat-form-field>
+<div id="logo-container" >
+    <img src="../../../../assets/logo.png">
 </div>
-<div>
-    <mat-form-field>
+<form id="loginform-container" [formGroup]="loginForm">
+    <mat-form-field class="loginform-fields">
+        <mat-label>Email address</mat-label>
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="!email.errors?.required">
+            Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="email.errors?.required">
+            Please enter you email
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="loginform-fields">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Password">
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" 
+        [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        <mat-error *ngIf="password.errors?.required">
+            Please enter you password
+        </mat-error>
     </mat-form-field>
-</div>
-<div>
-    <button mat-stroked-button color="primary">Login</button>
-</div>
+    <div class="loginform-buttons">
+        <button mat-flat-button color="primary" type="submit" 
+        [disabled]="!(loginForm.valid && loginForm.dirty)" (click)="onSubmit()">Login</button>
+        <button mat-flat-button color="primary">Register</button>
+    </div>
+</form>
+

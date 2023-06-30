@@ -1,0 +1,23 @@
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    width: 20%;
+  }
+#loginform-container{
+    margin-top: 2%;
+    margin-left: 40%;
+    margin-right: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .loginform-fields{
+      width: 100%;
+    }
+}
+.loginform-buttons{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
