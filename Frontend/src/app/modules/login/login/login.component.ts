@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../services/login.service';
+import { ErrorDialogComponent } from 'src/app/shared/error-dialog/error-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ import { LoginService } from '../services/login.service';
 export class LoginComponent implements OnInit {
   loginForm: any;
   hide = true;
-  constructor(private fb: FormBuilder, private loginService: LoginService) { 
+  constructor(private fb: FormBuilder, private loginService: LoginService, private dialog: MatDialog) { 
   }
 
   ngOnInit(): void {
@@ -35,7 +37,8 @@ export class LoginComponent implements OnInit {
       console.log("Logged in successfully")
     },
     (error)=>{
-      console.log("Login failed: ", error.error.message)
+      console.log("Login failed: ", error.error);
+      this.dialog.open(ErrorDialogComponent, {data: error.error.message})
     });
   }
 }

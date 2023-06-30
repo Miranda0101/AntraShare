@@ -7,19 +7,17 @@ img {
   }
 #loginform-container{
     margin-top: 2%;
-    text-align: center;
+    margin-left: 40%;
+    margin-right: 40%;
     display: flex;
     flex-direction: column;
-    // gap: 10px;
+    align-items: center;
     .loginform-fields{
-      width: 40px !important;
+      width: 100%;
     }
 }
-.loginform-button{
+.loginform-buttons{
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin-left:40%;
-  margin-right:40%;
-  width:auto;
+  justify-content: space-evenly;
+  width: 100%;
 }

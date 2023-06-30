@@ -15,12 +15,12 @@ export class LoginService {
     return this.http.post<LoginResponse>(this.url, userObj).pipe(
       tap((res) => {
         localStorage.setItem('access_token', res.access_token);
+        this.router.navigate(['/newsfeed']);
       }),
       // If there is an error, redirect to register page
       catchError((err: HttpErrorResponse) => {
         if (err.status === 404) {
             this.router.navigate(['/register']);
-
         }
         return throwError(err);
       })

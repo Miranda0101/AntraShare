@@ -2,33 +2,29 @@
     <img src="../../../../assets/logo.png">
 </div>
 <form id="loginform-container" [formGroup]="loginForm">
-    <div>   
-        <mat-form-field class="loginform-fieds">
-            <mat-label>Email address</mat-label>
-            <input matInput placeholder="Email" formControlName="email">
-            <mat-error *ngIf="!email.errors?.required">
-                Please enter a valid email address
-            </mat-error>
-            <mat-error *ngIf="email.errors?.required">
-                Please enter you email
-            </mat-error>
-        </mat-form-field>
-        
-    </div>
-    <div>
-        <mat-form-field class="loginform-fieds">
-            <mat-label>Password</mat-label>
-            <input matInput placeholder="Password" formControlName="password">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" 
-            [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-            <mat-error *ngIf="password.errors?.required">
-                Please enter you password
-            </mat-error>
-        </mat-form-field>
-    </div>
-    <div class="loginform-button">
+    <mat-form-field class="loginform-fields">
+        <mat-label>Email address</mat-label>
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="!email.errors?.required">
+            Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="email.errors?.required">
+            Please enter you email
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="loginform-fields">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" 
+        [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        <mat-error *ngIf="password.errors?.required">
+            Please enter you password
+        </mat-error>
+    </mat-form-field>
+    <div class="loginform-buttons">
         <button mat-flat-button color="primary" type="submit" 
         [disabled]="!(loginForm.valid && loginForm.dirty)" (click)="onSubmit()">Login</button>
         <button mat-flat-button color="primary">Register</button>

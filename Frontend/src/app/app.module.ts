@@ -12,10 +12,13 @@ import { AdminModule } from './modules/admin/admin.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ErrorDialogComponent } from './shared/error-dialog/error-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ErrorDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
