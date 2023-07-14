@@ -1,0 +1,12 @@
+.example-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-header_image{
+    background-size: cover;
+}
+img{
+    width: 60%;
+    align-self: center;
+}

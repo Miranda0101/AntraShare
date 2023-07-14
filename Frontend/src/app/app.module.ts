@@ -14,11 +14,15 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorDialogComponent } from './shared/error-dialog/error-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import { DatetransPipe } from './shared/datetrans.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorDialogComponent
+    ErrorDialogComponent,
+    NavBarComponent,
+    DatetransPipe
   ],
   imports: [
     BrowserModule,
