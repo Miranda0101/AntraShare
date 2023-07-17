@@ -7,7 +7,8 @@ import { ContentsComponent } from './contents/contents.component';
 import { PostNewComponent } from './post-new/post-new.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './service/post.service';
-
+import { SharedModule } from 'src/app/shared/shared.module';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PostService } from './service/post.service';
     MatButtonModule,
     MatCardModule,
     HttpClientModule,
-    // DatetransPipe
+    SharedModule,
+    MatIconModule
   ],
   providers: [PostService]
 })

@@ -2,14 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {
   Observable,
-  concat,
   concatMap,
-  forkJoin,
-  from,
   merge,
-  mergeAll,
   of,
-  tap,
   toArray,
 } from 'rxjs';
 import { Post } from '../posts.model';
@@ -38,7 +33,7 @@ export class PostService {
           // Get all inner values and put into array
           toArray(),
           concatMap((authors) => {
-            console.log("service", authors)
+            // console.log("service", authors)
             return of({ posts, authors });
           })
         );

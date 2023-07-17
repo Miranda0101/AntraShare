@@ -1,2 +1,12 @@
-<app-post-new></app-post-new>
-<app-contents></app-contents>
+<div class="newsfeed-container">
+    <section><app-nav-bar></app-nav-bar>
+        <app-post-new></app-post-new>
+        <app-contents></app-contents>
+    </section>
+    <section class="newsfeed-container__likelist">
+        <button mat-mini-fab class="likelist-button" aria-label="Toggle Like list">
+            <mat-icon>favorite</mat-icon>
+        </button>
+    </section>
+    
+</div>
